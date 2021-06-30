@@ -2,24 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../../../../Downloads/cera pro sv/Cera Pro Black Italic.otf">
-   </FileRef>
-   <FileRef
-      location = "group:../../../../../Downloads/cera pro sv/Cera Pro Black.otf">
-   </FileRef>
-   <FileRef
-      location = "group:../../../../../Downloads/cera pro sv/Cera Pro Bold.otf">
-   </FileRef>
-   <FileRef
-      location = "group:../../../../../Downloads/cera pro sv/Cera Pro Light.otf">
-   </FileRef>
-   <FileRef
-      location = "group:../../../../../Downloads/cera pro sv/Cera Pro Medium.otf">
-   </FileRef>
-   <FileRef
-      location = "group:../../../../../Downloads/cera pro sv/Cera Pro Regular Italic.otf">
-   </FileRef>
-   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

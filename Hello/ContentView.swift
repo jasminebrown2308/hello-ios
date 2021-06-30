@@ -52,46 +52,104 @@ struct InputView: View {
                 Spacer()
                     .background(LinearGradient(gradient: Gradient(colors: [Color("SkyBlue2"), Color("SkyBlue1")]), startPoint: .top, endPoint: .bottom))
                     .ignoresSafeArea()
-                VStack {
-                    TextField("NAME", text: $name)
-                        .padding(.horizontal, 50)
-                        .font(Font.custom("Cera Pro Medium", size: 34))
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.center)
-                        .accentColor(.white)
-                    Divider()
-                        .background(Color.white)
-                        .padding(.horizontal, 50)
-                        .padding(.top, -10)
-                        .foregroundColor(.white)
-                        .frame(height: 20.0)
-                    Spacer()
-                    DropDown(language: $language)
-                    Spacer()
-                    NavigationLink(destination: OutputView(name: name, language: language)) {
-                        ZStack {
-                            Image("Cloud")
-                                .resizable()
-                                .scaledToFit()
-                                .padding(5)
-                                .padding([.bottom], 10)
-                            HStack {
-                                Text("Say hi")
-                                    .font(Font.custom("Cera Pro Light", size: 28))
-                                    .foregroundColor(Color.black)
-                                    .padding([.bottom], 30)
-                                    .padding([.leading], 35)
-                                Image(systemName: "chevron.right.2")
-                                    .foregroundColor(Color.black)
-                                    .padding([.bottom], 30)
-                                    .padding([.trailing], 35)
+                GeometryReader { geo in
+                    let width = geo.frame(in: .global).width
+                    let height = geo.frame(in: .global).height
+                    
+                    if height > width {
+                        /* Portrait layout */
+                        VStack {
+                            Spacer()
+                            Spacer()
+                            TextField("NAME", text: $name)
+                                .padding(.horizontal, 50)
+                                .font(Font.custom("Cera Pro Medium", size: 34))
+                                .foregroundColor(Color.white)
+                                .multilineTextAlignment(.center)
+                                .accentColor(.white)
+                            Divider()
+                                .background(Color.white)
+                                .padding(.horizontal, 50)
+                                .padding(.top, -10)
+                                .foregroundColor(.white)
+                                .frame(height: 20.0)
+                            Spacer()
+                            DropDown(language: $language)
+                            Spacer()
+                            NavigationLink(destination: OutputView(name: name, language: language)) {
+                                ZStack {
+                                    Image("Cloud")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .padding(5)
+                                        .padding([.bottom], 10)
+                                    HStack {
+                                        Text("Say hi")
+                                            .font(Font.custom("Cera Pro Light", size: 28))
+                                            .foregroundColor(Color.black)
+                                            .padding([.bottom], 30)
+                                            .padding([.leading], 35)
+                                        Image(systemName: "chevron.right.2")
+                                            .foregroundColor(Color.black)
+                                            .padding([.bottom], 30)
+                                            .padding([.trailing], 35)
+                                    }
+                                }.buttonStyle(PlainButtonStyle())
                             }
-                        }.buttonStyle(PlainButtonStyle())
+                            Spacer()
+                            Spacer()
+                        }
+                        
+                    } else {
+                        /* Landscape layout */
+                        HStack {
+                            VStack {
+                                DropDown(language: $language)
+                                Spacer()
+                            }.padding([.top], 50.0)
+                            VStack {
+                                Spacer()
+                                Spacer()
+                                TextField("NAME", text: $name)
+                                    .padding(.horizontal, 50)
+                                    .font(Font.custom("Cera Pro Medium", size: 34))
+                                    .foregroundColor(Color.white)
+                                    .multilineTextAlignment(.center)
+                                    .accentColor(.white)
+                                Divider()
+                                    .background(Color.white)
+                                    .padding(.horizontal, 50)
+                                    .padding(.top, -10)
+                                    .foregroundColor(.white)
+                                    .frame(height: 20.0)
+                                Spacer()
+                                NavigationLink(destination: OutputView(name: name, language: language)) {
+                                    ZStack {
+                                        Image("Cloud")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .padding(5)
+                                            .padding([.bottom], 10)
+                                        HStack {
+                                            Text("Say hi")
+                                                .font(Font.custom("Cera Pro Light", size: 28))
+                                                .foregroundColor(Color.black)
+                                                .padding([.bottom], 30)
+                                                .padding([.leading], 35)
+                                            Image(systemName: "chevron.right.2")
+                                                .foregroundColor(Color.black)
+                                                .padding([.bottom], 30)
+                                                .padding([.trailing], 35)
+                                        }
+                                    }.buttonStyle(PlainButtonStyle())
+                                }
+                                Spacer()
+                            }
+                        }.padding([.leading], 20.0)
+                        .padding([.trailing], 10.0)
                     }
-                    Spacer()
-                    Spacer()
                 }
-            }
+            }.navigationBarHidden(true)
         }
     }
 }
@@ -103,6 +161,7 @@ struct OutputView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     init(name: String, language: Language) {
+        /* Generate message ("Hello + name!" or just "Hello!" if name is empty */
         if (name != "") {
             self.name = " "
         }
@@ -121,16 +180,14 @@ struct OutputView: View {
                 HStack {
                     Spacer()
                     Text(language.translation + name + "!")
-                        .font(Font.custom("Cera Pro Bold", size: 34))
-                        .fontWeight(/*@START_MENU_TOKEN@*/.medium/*@END_MENU_TOKEN@*/)
+                        .font(Font.custom("Cera Pro Medium", size: 34))
                         .padding()
-                        
                     Spacer()
                 }.background(Color.white
                                 .opacity(0.6))
                 Spacer()
                 HStack {
-                    Button(action: {self.presentationMode.wrappedValue.dismiss()}) {
+                    Button(action: { self.presentationMode.wrappedValue.dismiss() }) { // go back to InputView
                         HStack {
                             Image(systemName: "chevron.left.2")
                                 .foregroundColor(Color.black)
@@ -149,6 +206,7 @@ struct OutputView: View {
             }.padding([.vertical], 40)
             .ignoresSafeArea()
             .navigationBarBackButtonHidden(true)
+            .navigationBarHidden(true)
         }
     }
 }
@@ -177,25 +235,26 @@ struct DropDown: View {
                             .padding([.trailing], 35.0)
                     }.frame(width: 300.0).onTapGesture {
                         withAnimation() {
-                            self.expand.toggle()
-                            self.height = self.expand ? 220.0 : 75.0
-                            self.language = .Select
+                            expand.toggle()
+                            height = expand ? 220.0 : 75.0
+                            language = .Select
                         }
                     }
+                    
+                    /* When expanded, display buttons corresponding to each language option */
                     if expand {
                         ForEach(Language.allCases, id: \.id) { lang in
                             if (lang.display) {
                                 Button(action: {
                                     self.language = lang
-                                    self.expand.toggle()
-                                    self.height = 75.0
+                                    expand.toggle()
+                                    height = 75.0
                                 }) {
                                     Text(lang.id)
                                         .font(Font.custom("Cera Pro Light", size: 22))
                                         .foregroundColor(Color(red: 0.15, green: 0.15, blue: 0.15, opacity: 1.0))
                                         .padding([.vertical], -2)
-                                    
-                                 }
+                                }
                             }
                         }
                         Spacer()
@@ -214,8 +273,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             InputView()
-            InputView()
-                .previewDevice("iPhone 12")
         }
     }
 }
