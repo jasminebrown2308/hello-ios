@@ -12,11 +12,8 @@
 		DA41186A266EB15E00ECD490 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA411869266EB15E00ECD490 /* Assets.xcassets */; };
 		DA41186D266EB15E00ECD490 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA41186C266EB15E00ECD490 /* Preview Assets.xcassets */; };
 		DAFE47C426824DE90004FD03 /* Cera Pro Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = DAFE47BE26824DE70004FD03 /* Cera Pro Medium.otf */; };
-		DAFE47C526824DE90004FD03 /* Cera Pro Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = DAFE47BF26824DE80004FD03 /* Cera Pro Black.otf */; };
 		DAFE47C626824DE90004FD03 /* Cera Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = DAFE47C026824DE80004FD03 /* Cera Pro Light.otf */; };
 		DAFE47C726824DE90004FD03 /* Cera Pro Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = DAFE47C126824DE80004FD03 /* Cera Pro Bold.otf */; };
-		DAFE47C826824DE90004FD03 /* Cera Pro Regular Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DAFE47C226824DE90004FD03 /* Cera Pro Regular Italic.otf */; };
-		DAFE47C926824DE90004FD03 /* Cera Pro Black Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DAFE47C326824DE90004FD03 /* Cera Pro Black Italic.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +24,8 @@
 		DA41186C266EB15E00ECD490 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DA41186E266EB15E00ECD490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DAFE47BE26824DE70004FD03 /* Cera Pro Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cera Pro Medium.otf"; sourceTree = "<group>"; };
-		DAFE47BF26824DE80004FD03 /* Cera Pro Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cera Pro Black.otf"; sourceTree = "<group>"; };
 		DAFE47C026824DE80004FD03 /* Cera Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cera Pro Light.otf"; sourceTree = "<group>"; };
 		DAFE47C126824DE80004FD03 /* Cera Pro Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cera Pro Bold.otf"; sourceTree = "<group>"; };
-		DAFE47C226824DE90004FD03 /* Cera Pro Regular Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cera Pro Regular Italic.otf"; sourceTree = "<group>"; };
-		DAFE47C326824DE90004FD03 /* Cera Pro Black Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cera Pro Black Italic.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +60,9 @@
 			children = (
 				DA411865266EB15A00ECD490 /* HelloApp.swift */,
 				DA411867266EB15A00ECD490 /* ContentView.swift */,
-				DAFE47C326824DE90004FD03 /* Cera Pro Black Italic.otf */,
-				DAFE47BF26824DE80004FD03 /* Cera Pro Black.otf */,
 				DAFE47C126824DE80004FD03 /* Cera Pro Bold.otf */,
 				DAFE47C026824DE80004FD03 /* Cera Pro Light.otf */,
 				DAFE47BE26824DE70004FD03 /* Cera Pro Medium.otf */,
-				DAFE47C226824DE90004FD03 /* Cera Pro Regular Italic.otf */,
 				DA411869266EB15E00ECD490 /* Assets.xcassets */,
 				DA41186E266EB15E00ECD490 /* Info.plist */,
 				DA41186B266EB15E00ECD490 /* Preview Content */,
@@ -147,11 +138,8 @@
 				DAFE47C426824DE90004FD03 /* Cera Pro Medium.otf in Resources */,
 				DAFE47C726824DE90004FD03 /* Cera Pro Bold.otf in Resources */,
 				DAFE47C626824DE90004FD03 /* Cera Pro Light.otf in Resources */,
-				DAFE47C826824DE90004FD03 /* Cera Pro Regular Italic.otf in Resources */,
 				DA41186D266EB15E00ECD490 /* Preview Assets.xcassets in Resources */,
-				DAFE47C526824DE90004FD03 /* Cera Pro Black.otf in Resources */,
 				DA41186A266EB15E00ECD490 /* Assets.xcassets in Resources */,
-				DAFE47C926824DE90004FD03 /* Cera Pro Black Italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
